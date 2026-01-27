@@ -4,9 +4,9 @@
 - `<html> </html>`
   - Creates an HTML document
 - `<head> </head>`
-  - Sets off the title & other info that isn't displayed
+  - Sets off the title & other metadata that isn't displayed
 - `<body> </body>`
-  - Sets off the visible portion of the document
+  - Sets off the visible (rendered) portion of the document
 - `<title> </title>`
   - Puts name of the document in the title bar; when bookmarking pages, this is what is bookmarked
 
