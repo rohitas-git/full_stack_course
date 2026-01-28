@@ -3,9 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-  const [stats, setStats] = useState({ users: 10, alerts: 2 });
+export default function App() {
 
   return (
     <>
@@ -18,26 +16,13 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <p>Users: {stats.users}</p>
-      <p>Alerts: {stats.alerts}</p>
-      <div>
-      <button onClick={() => setStats({...stats, users: stats.users + 1})}>Increment users</button>
-      <button onClick={() => setStats({...stats, alerts: stats.alerts + 1 })}>Increment alerts</button><br></br>
-      <button onClick={() => setStats({...stats, users: stats.users - 1 })}>Decrement users</button>
-      <button onClick={() => setStats({...stats, alerts: stats.alerts - 1 })}>Decrement alerts</button><br></br>
-      <button onClick={() => setStats({...stats, users: 0 })}>Reset users</button>
-      <button onClick={() => setStats({...stats, alerts: 0 })}>Reset alerts</button>
+      <p>Using Reusable Counters:</p>
+      <div className="card">
+        <Counter label="Users" initialValue={10} />
+        <Counter label="Alerts" initialValue={2} />
       </div>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <button onClick={() => setCount((count) => count - 1)}>
-          Decrement
-        </button>
-        <button onClick={() => setCount((count) => count = 0)}>
-          Reset
-        </button>
+        <CounterApp />  
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
@@ -49,4 +34,41 @@ function App() {
   )
 }
 
-export default App
+// Counter component focuses on the logic of counting
+// It now accepts props to be reusable!
+function Counter({ label, initialValue }) {
+  const [count, setCount] = useState(initialValue || 0)
+
+  function increment() {
+    setCount(count + 1)
+  }
+
+  function decrement() {
+    setCount(count - 1)
+  }
+
+  function reset() {
+    setCount(initialValue || 0)
+  }
+
+  return (
+    <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
+      <h3>{label || "Counter"}</h3>
+      <p>Count: {count}</p>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  )
+}
+
+// CounterApp component focuses on layout or assembling the page.
+function CounterApp() {
+  return (
+    <>
+      <h1>My Counter Application</h1>
+      <Counter />
+    </>
+  )
+}
+
