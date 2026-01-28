@@ -5,6 +5,21 @@ import './App.css'
 
 export default function App() {
 
+  const [sharedCount, setSharedCount] = useState(0);
+
+  function handleClick() {
+    setSharedCount(sharedCount + 1);
+  }
+
+  // Doesn't have its own state
+  function MySharedButton({count, handleClick}) {
+    return (
+      <button onClick={handleClick}>
+        Shared Clicked {count} times
+      </button>
+    )
+  }
+
   return (
     <>
       <div>
@@ -22,7 +37,9 @@ export default function App() {
         <Counter label="Alerts" initialValue={2} />
       </div>
       <div className="card">
-        <CounterApp />  
+        <CounterApp label="Not Shared Count" />  
+        <MySharedButton count={sharedCount} handleClick={handleClick} />
+        <MySharedButton count={sharedCount} handleClick={handleClick} />
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
@@ -33,6 +50,8 @@ export default function App() {
     </>
   )
 }
+
+
 
 // Counter component focuses on the logic of counting
 // It now accepts props to be reusable!
