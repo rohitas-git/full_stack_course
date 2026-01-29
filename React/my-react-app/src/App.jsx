@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -63,7 +63,7 @@ function Counter({ label, initialValue }) {
   const [number2, setNumber2] = useState(0);
   const [listOfNames, setListOfNames] = useState(names);
   const [searchQuery, setSearchQuery] = useState('');
-  const [fibnocciNumber, setFibnocciNumber] = useState(0);
+  const [fibonacciNumber, setFibonacciNumber] = useState(0);
 
   function increment() {
     setCount(count + 1)
@@ -90,11 +90,44 @@ function Counter({ label, initialValue }) {
     setListOfNames(newList)
   }
 
-  function find_fibnocci(n) {
-    if (n === 0) return 0;
-    if (n === 1) return 1;
-    return find_fibnocci(n - 1) + find_fibnocci(n - 2);
-  }
+  // useMemo is used to memoize the value of fibValue
+  // It will only recompute the value when the dependency changes
+  // Optimized Iterative Approach:
+  // Time Complexity: O(n)
+  // Space Complexity: O(1)
+  const fibValue = useMemo(() => {
+    const n = parseInt(fibonacciNumber) || 0;
+    if (n < 0) return 0;
+    if (n <= 1) return n;
+
+    let a = 0, b = 1;
+    for (let i = 2; i <= n; i++) {
+      let temp = a + b;
+      a = b;
+      b = temp;
+    }
+    return b;
+  }, [fibonacciNumber]);
+
+  // Recursive Approach with Memoization (inside useMemo)
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
+  const fibValueRecursive = useMemo(() => {
+    const n = parseInt(fibonacciNumber) || 0;
+    
+    // Memoization cache
+    const memo = {};
+    function fib(num) {
+      if (num < 0) return 0;
+      if (num <= 1) return num;
+      if (memo[num]) return memo[num];
+      
+      // Calculate and store in cache
+      memo[num] = fib(num - 1) + fib(num - 2);
+      return memo[num];
+    }
+    return fib(n);
+  }, [fibonacciNumber]);
 
   return (
     <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
@@ -122,8 +155,8 @@ function Counter({ label, initialValue }) {
       </div>
 
       <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
-        <input type="number" placeholder='Enter Nth Number' onChange={(e) => setFibnocciNumber(e.target.value)} />
-        <p>{find_fibnocci(fibnocciNumber)}</p>
+        <input type="number" placeholder='Enter Nth Number' onChange={(e) => setFibonacciNumber(e.target.value)} />
+        <p>{fibValue}</p>
       </div>
     </div>
   )
