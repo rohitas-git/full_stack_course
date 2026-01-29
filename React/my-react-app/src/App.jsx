@@ -33,10 +33,10 @@ export default function App() {
       <h1>Vite + React</h1>
       <p>Using Reusable Counters:</p>
 
-      <div className="card">
+      {/* <div className="card">
         <Counter label="Users" initialValue={10} />
         <Counter label="Alerts" initialValue={2} />
-      </div>
+      </div> */}
       <div className="card">
         <CounterApp label="Not Shared Count" />
 
@@ -100,24 +100,31 @@ function Counter({ label, initialValue }) {
     <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
       <h3>{label || "Counter"}</h3>
       <p>Count: {count}</p>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
-      <button onClick={reset}>Reset</button>
-      <br />
-      <input type="number" onChange={(e) => setNumber1(e.target.value)} />
-      <button onClick={multiplcation}>*</button>
-      <button onClick={division}>/</button>
-      <input type="number" onChange={(e) => setNumber2(e.target.value)} /> 
-      <br />
-      
-      <input type="text" onChange={(e) => setSearchQuery(e.target.value)} />
-      <button onClick={search}>Search</button>
-      <ul>
-        {listOfNames.map((name, index) => <li key={index}>{name}</li>)}
-      </ul> 
-      <br />
-      <input type="number" placeholder='Enter Nth Number' onChange={(e) => setFibnocciNumber(e.target.value)} />
-      <p>{find_fibnocci(fibnocciNumber)}</p>
+      <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
+        <button onClick={increment}>+</button>
+        <button onClick={decrement}>-</button>
+        <button onClick={reset}>Reset</button>
+      </div>
+
+      <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
+        <input type="number" onChange={(e) => setNumber1(e.target.value)} />
+        <button onClick={multiplcation}>*</button>
+        <button onClick={division}>/</button>
+        <input type="number" onChange={(e) => setNumber2(e.target.value)} />
+      </div>
+
+      <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
+        <input type="text" onChange={(e) => setSearchQuery(e.target.value)} />
+        <button onClick={search}>Search</button>
+        <ul>
+          {listOfNames.map((name, index) => <li key={index}>{name}</li>)}
+        </ul>
+      </div>
+
+      <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
+        <input type="number" placeholder='Enter Nth Number' onChange={(e) => setFibnocciNumber(e.target.value)} />
+        <p>{find_fibnocci(fibnocciNumber)}</p>
+      </div>
     </div>
   )
 }
