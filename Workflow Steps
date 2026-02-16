@@ -1,0 +1,32 @@
+Tutorial Workflow Steps
+
+1. **Database Setup**: Create a MongoDB Atlas account, build a free cluster, and configure network access (allow IP 0.0.0.0/0 for testing) and create a database user (username/password).
+2. **Project Structure**: Create a root folder containing two sub-folders: `server` (backend) and `client` (frontend).
+3. **Server Initialization**: 
+   - Initialize `package.json` (`npm init -y`).
+   - Install dependencies (`npm install express mongoose cors`).
+   - Install dev dependencies (`npm install nodemon --save-dev`).
+   - Set up a basic Express server in `index.js`, configure CORS, and listen on port 3001.
+4. **Database Connection**: Connect the Express server to the MongoDB cluster using `mongoose.connect()` and your connection string (replace `<password>` with your actual user password).
+5. **Create Model**: Define a Mongoose Schema (structure) for the "Users" collection (e.g., Name, Age, Username) in a `models/Users.js` file.
+6. **Build API Endpoints**:
+   - **GET Route (`/getUsers`)**: To retrieve all users from the database (`UserModel.find({})`).
+   - **POST Route (`/createUser`)**: To add a new user to the database (`new UserModel(req.body).save()`).
+7. **Test API**: Use an extension like ThunderClient or Postman to verify the endpoints:
+   - Send a POST request with JSON body (e.g., `{"name": "John", "age": 25, "username": "john123"}`).
+   - Send a GET request to verify the data was stored.
+8. **Frontend Setup**: 
+   - Initialize React app (`npx create-react-app client` or `npm create vite@latest client`).
+   - Install Axios (`npm install axios`).
+   - Clean up boilerplate files (logos, css).
+9. **Fetch Data (Read)**: 
+   - Create a state variable `listOfUsers`.
+   - Use `useEffect` hook to call `axios.get("http://localhost:3001/getUsers")`.
+   - Display the list using `.map()` in your JSX.
+10. **Send Data (Create)**: 
+    - Create input forms and state variables for Name, Age, Username.
+    - Create a function `createUser` that calls `axios.post("http://localhost:3001/createUser", { name, age, username })`.
+    - Update the UI list automatically after a successful post (by either fetching again or appending to the local list state).
+11. **Run Application**:
+    - Start Backend: `cd server` -> `npm start` (or `node index.js`).
+    - Start Frontend: `cd client` -> `npm start` (or `npm run dev`).

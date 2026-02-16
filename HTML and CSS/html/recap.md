@@ -6,4 +6,5 @@
 4. Input fields
 5. Anchor tags
 6. Document structure
-7. 
+7. Lists
+8. Deployment

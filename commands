@@ -1,0 +1,14 @@
+# Terminal Commands Used
+## Server Side:
+
+- cd server: Navigates into the server directory.
+- npm init -y: Initializes a Node.js application with default settings.
+- npm install express mongoose cors nodemon: Installs the necessary backend dependencies,.
+- node index.js: Runs the server manually.
+- npm start: Runs the server using nodemon (after configuring the script in package.json) to automatically restart on file changes.
+
+## Client Side:
+- npx create-react-app: Generates the boilerplate React application.
+- cd client: Navigates into the client directory.
+- npm install axios: Installs the library used for making API requests.
+- npm start: Launches the React development server locally on port 3000.
