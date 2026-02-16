@@ -1,20 +1,34 @@
 import React from "react";
-// Hook to access the redux store's state.
-import { useSelector } from "react-redux";
-// Hook to dispatch actions to the redux store.
-import { useDispatch } from "react-redux";
-// Action creator for removing a movie.
-import { removeMovie } from "../movieSlice";
+// import { useSelector, useDispatch } from "react-redux";
+// import { removeMovie } from "../movieSlice";
+
+/*
+    EXERCISE 3: Connect Components (Select & Dispatch)
+
+    1. Import `useSelector` and `useDispatch` from `react-redux`.
+    2. Import `removeMovie` from `../movieSlice`.
+    3. Use `useSelector` to get the list of movies from the state.
+       - The state structure is `{ moviesReducer: { movies: [...] } }`.
+    4. Initialize `dispatch`.
+    5. Dispatch `removeMovie` with the movie ID when the remove button is clicked.
+
+    Documentation: https://react-redux.js.org/api/hooks#useselector
+*/
 
 export const MovieList = () => {
 
-    const movies = useSelector((state) => state.moviesReducer.movies);
-    const dispatch = useDispatch();
+    // TODO: Get movies from state
+    // const movies = useSelector(...) || []; 
+    const movies = [];
+
+    // TODO: Initialize dispatch
+    // const dispatch = ...
 
     const handleRemoveMovie = (id) => {
-        dispatch(removeMovie(id));
+        // TODO: Dispatch removeMovie
+        // dispatch(...)
     };
-    
+
     return (
         <div>
             <h2>Movie List</h2>

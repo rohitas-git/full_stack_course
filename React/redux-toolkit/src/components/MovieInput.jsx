@@ -1,29 +1,29 @@
-
 import { useState } from "react";
-import { addMovie } from "../movieSlice";
-import { useDispatch } from "react-redux";
+// import { addMovie } from "../movieSlice";
+// import { useDispatch } from "react-redux";
+
+/*
+    EXERCISE 3: Connect Components (Dispatch)
+
+    1. Import `useDispatch` from `react-redux`.
+    2. Import `addMovie` action from `../movieSlice`.
+    3. Initialize `dispatch` using `useDispatch()`.
+    4. Dispatch the `addMovie` action with the new movie name as the payload when the button is clicked.
+
+    Documentation: https://react-redux.js.org/api/hooks#usedispatch
+*/
 
 export const MovieInput = () => {
     const [newMovieName, setNewMovieName] = useState("");
-    /**
-     * Purpose: Accesses the dispatch function from the Redux store to send actions and trigger state updates.
-     * Args: None
-     * Time Complexity: O(1)
-     * Space Complexity: O(1)
-     */
-    const dispatch = useDispatch();
 
-    /**
-     * Purpose: Validates the movie input and dispatches the addMovie action if valid.
-     * Args: None
-     * Time Complexity: O(1)
-     * Space Complexity: O(1)
-     */
+    // TODO: Initialize dispatch
+    // const dispatch = ...
+
     const handleAddMovie = () => {
         if (newMovieName.trim() !== "") {
-            // dispatches this action to the redux store
-            dispatch(addMovie(newMovieName));
-            // clears the input field
+            // TODO: Dispatch addMovie action
+            // dispatch(...)
+
             setNewMovieName("");
         }
     };
