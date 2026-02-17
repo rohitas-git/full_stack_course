@@ -1,13 +1,19 @@
 body {
-    background: black;
+    background: seagreen;
 }
 
-input {
-    width: 400px;
-    display: block;
+div {
+    display: flex;
+    margin-top: 100px;
 }
 
 img {
-    width: 300px;
     display: block;
+    width: 300px;
 }   
+
+input {
+    display: block;
+    width: 400px;
+}
+
