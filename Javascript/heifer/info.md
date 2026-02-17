@@ -63,3 +63,10 @@ Modules have a few great advantages:
 - Stuff defined in a module is not in the global scope. To be accessed from another module, it must be exported.
 - Modules are deferred by default, meaning they only run after the document has been parsed.
 - Strict mode is enabled by default. Yay!
+
+## Default exports
+Default exports are often used when you want to export a single value from a module.
+
+Honestly... I kinda hate them. What if I want to export more things later? Now I have to refactor all of my imports and exports. It's a pain.
+
+My personal preference is to just pretend default exports don't exist, and always use named exports.
