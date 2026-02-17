@@ -6,6 +6,14 @@ Centering an image:
 3. Margin left and right must be auto
 */
 
+/* 
+margin: auto;
+The 'auto' value instructs the browser to occupy all available 
+space in the margin area. When applied to both the left and 
+right margins of a block element with a defined width, it 
+centers the element within its container.
+*/
+
 img {
     width: 500px;
     display: block;
