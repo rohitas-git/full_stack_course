@@ -1,2 +1,5 @@
+const moo = require("./moo");
+
 const NAME = "Charlie";
-console.log(`moo! ${NAME}`);
+const speak = moo(NAME);
+console.log(speak);
