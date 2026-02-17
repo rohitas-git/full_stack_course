@@ -64,9 +64,19 @@ Modules have a few great advantages:
 - Modules are deferred by default, meaning they only run after the document has been parsed.
 - Strict mode is enabled by default. Yay!
 
-## Default exports
+## Default Exports
 Default exports are often used when you want to export a single value from a module.
 
 Honestly... I kinda hate them. What if I want to export more things later? Now I have to refactor all of my imports and exports. It's a pain.
 
 My personal preference is to just pretend default exports don't exist, and always use named exports.
+
+## Vite Configuration
+The `vite.config.js` file is used to configure Vite. Here is a breakdown of the configuration used for library mode:
+
+- `build.lib` – tells Vite that we’re generating a “library” bundle. In practical terms:
+  - The build is not based on an HTML file or a browser runtime environment.
+  - There's a single JavaScript entry which will be packaged (ideal for CLIs or libraries).
+  - The output can be executed in Node.js.
+- `entry: 'main.js'` – sets the entry point for the bundle as `main.js`.
+- `formats: ['es']` – instructs Vite to output the bundle in ES module format.
