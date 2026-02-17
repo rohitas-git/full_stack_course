@@ -1,0 +1,15 @@
+
+/* 
+Centering an image:
+1. Display must be block
+2. Must have width
+3. Margin left and right must be auto
+*/
+
+img {
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+

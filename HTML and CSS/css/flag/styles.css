@@ -1,18 +1,23 @@
 body {
-    background: seagreen;
+    margin:0;
 }
 
-.main {
-    margin-top: 100px;
+.red {
+    background: #c71226;
+    height: 100px;
+    margin-bottom: 10px;
 }
 
-.google-logo {
-    display: block;
-    width: 300px;
-}   
+.blue {
+    background: #0d1b88;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+    
 
-.google-search-bar {
-    display: block;
-    width: 400px;
+.green {
+    background: #397327;
+    height: 100px;
 }
 

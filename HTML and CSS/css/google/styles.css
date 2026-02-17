@@ -1,5 +1,5 @@
 body {
-    background: seagreen;
+    background: white;
 }
 
 .main {
@@ -9,6 +9,7 @@ body {
 .google-logo {
     display: block;
     width: 300px;
+    margin-bottom: 30px;
 }   
 
 .google-search-bar {

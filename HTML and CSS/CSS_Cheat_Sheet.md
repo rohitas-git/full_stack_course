@@ -198,6 +198,13 @@ P { margin: 2em 4em; } /* top & bottom 2em, left & right 4em */
 DIV { margin: 1em 2em 3em 4em; } /* top 1em, right 2em, bottom 3em, left 4em */
 ```
 
+**Collapsing Margins:**
+Vertical margins between adjacent block-level boxes (siblings) collapse. This means that the distance between them is not the sum of the margins, but the greater of the two margins.
+
+*Example:*
+If `Box A` has `margin-bottom: 20px` and `Box B` (immediately below it) has `margin-top: 10px`, the space between them will be **20px**, not 30px.
+
+
 ### Padding
 Describes the amount of space between the border and the content of the selector.
 
