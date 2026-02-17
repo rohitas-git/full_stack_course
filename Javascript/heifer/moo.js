@@ -1,11 +1,10 @@
 
 // moo.js
-function moo(name){
+export function moo(name){
     return `moo! ${name}`;
 }
 
-// Exporting using CommonJS syntax
-module.exports = moo;
+// Exporting using CommonJS syntax: module.exports = moo;
 
 // the less preferred way of doing modules in JavaScript: CommonJS.
 // CommonJS is a module system that was created for Node.js 
