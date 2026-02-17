@@ -2,17 +2,17 @@ body {
     background: seagreen;
 }
 
-div {
+.main {
     display: flex;
     margin-top: 100px;
 }
 
-img {
+.google-logo {
     display: block;
     width: 300px;
 }   
 
-input {
+.google-search-bar {
     display: block;
     width: 400px;
 }
