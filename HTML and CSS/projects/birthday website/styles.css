@@ -26,5 +26,25 @@ body{
 }
 
 h1, h2, h3, h4, p {
-    text-shadow: 0px 0px 1px black; 
+    text-shadow: 0px 0px 1px black;    
+}
+
+#bdy-age {
+    background: #EFB0C9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+#bdy-date {
+    margin: 5px;
+    background: #EFB0C9;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#body-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
