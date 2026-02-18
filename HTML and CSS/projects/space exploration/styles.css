@@ -6,16 +6,15 @@ Challenge:
 */
 
 body {
-    color: #EDDEDA;
-    background-image: url("./images/space2.gif");
-    background-size: cover;
+    color: #262C49;
     text-align: center;
     font-family: "Orbitron", serif;
+    margin: 0px;
 }
 
 .apply-btn{
     background-color: white;
-    padding: 5px 10px;
+    padding: 5px 10px; 
     border: none;
     font-family: inherit;
     color: #262C49;
@@ -28,4 +27,11 @@ body {
 
 #main-logo{
     width: 100px;
+}
+
+#hero{
+    background-image: url("./images/space2.gif");
+    background-size: cover;
+    padding: 20px;
+    color: #EDDEDA;
 }
