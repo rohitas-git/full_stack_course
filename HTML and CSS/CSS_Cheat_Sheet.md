@@ -291,3 +291,57 @@ P { clear: left; }
 H1 { clear: right; }
 .foo { clear: none; }
 ```
+
+## Flexbox
+
+### Enable Flexbox
+Turns an element into a flex container, making its direct children flex items.
+```css
+.container {
+  display: flex;
+}
+```
+
+### Flex Direction
+Defines the direction in which the container wants to stack the flex items.
+- `row` (default): left to right
+- `column`: top to bottom
+```css
+.container {
+  flex-direction: row; /* or column */
+}
+```
+
+### Justify Content
+Aligns flex items along the **main axis** (horizontal if row, vertical if column).
+- `flex-start`: items packed toward the start line
+- `flex-end`: items packed toward the end line
+- `center`: items centered along the line
+- `space-between`: items evenly distributed; first line at the start of the line
+- `space-around`: items evenly distributed with equal space around them
+```css
+.container {
+  justify-content: center;
+}
+```
+
+### Align Items
+Aligns flex items along the **cross axis** (vertical if row, horizontal if column).
+- `stretch` (default): stretch to fill the container
+- `flex-start`: cross-start margin edge of the items is placed on the cross-start line
+- `flex-end`: cross-end margin edge of the items is placed on the cross-end line
+- `center`: items are centered in the cross-axis
+- `baseline`: items are aligned such as their baselines align
+```css
+.container {
+  align-items: center;
+}
+```
+
+### Gap
+Controls the space between flex items.
+```css
+.container {
+  gap: 10px;
+}
+```
