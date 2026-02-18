@@ -15,3 +15,11 @@
 1. Text-align: center
 2. Block + Width + Margin left+right auto 
 3. Flexbox
+
+# Recap 2
+1. Image alt texts
+2. Flex child containers
+3. CSS Inhertiance
+4. Margin and padding shorthands
+5. Web-Safe fonts
+6. Color palettes (coloors.co)
