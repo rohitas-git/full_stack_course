@@ -1,0 +1,21 @@
+/*
+Challenge:
+1. Center the text and button
+2. Style the button according to the design.
+   Use a class to select the button.
+*/
+
+body {
+    color: white;
+    background-image: url("universe.jpg");
+    background-size: cover;
+    text-align: center;
+    font-family: "Orbitron", serif;
+}
+
+.apply-btn{
+    background-color: white;
+    padding: 5px 10px;
+    border: none;
+    font-family: inherit;
+}
