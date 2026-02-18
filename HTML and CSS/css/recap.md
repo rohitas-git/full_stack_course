@@ -1,4 +1,4 @@
-# Recap
+## Recap
 1. CSS Syntax
 2. Inline vs Block
 3. Margins
@@ -23,3 +23,13 @@
 4. Margin and padding shorthands
 5. Web-Safe fonts
 6. Color palettes (coloors.co)
+
+
+## Recap 3
+1. Background images
+2. Webp format
+3. Google fonts
+4. The <span> tag
+5. IDs & utility classes
+6. Text shadows
+7. lang property 

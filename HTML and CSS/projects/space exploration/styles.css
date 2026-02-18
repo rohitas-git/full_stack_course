@@ -10,6 +10,8 @@ body {
     text-align: center;
     font-family: "Orbitron", serif;
     margin: 0px;
+    background-image: url("./images/universe.jpg");
+    background-size: cover;
 }
 
 .apply-btn{
@@ -33,5 +35,13 @@ body {
     background-image: url("./images/space2.gif");
     background-size: cover;
     padding: 20px;
+    color: #EDDEDA;
+}
+
+#title{
+    text-shadow: 0px 0px 10px #000;
+}
+
+#terms{
     color: #EDDEDA;
 }
