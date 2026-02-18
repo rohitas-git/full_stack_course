@@ -6,8 +6,8 @@ Challenge:
 */
 
 body {
-    color: white;
-    background-image: url("universe.jpg");
+    color: #EDDEDA;
+    background-image: url("./images/space2.gif");
     background-size: cover;
     text-align: center;
     font-family: "Orbitron", serif;
@@ -18,8 +18,14 @@ body {
     padding: 5px 10px;
     border: none;
     font-family: inherit;
+    color: #262C49;
+    font-weight: 800;
 }
 
 .underline{
     border-bottom: 6px solid white;
+}
+
+#main-logo{
+    width: 100px;
 }
