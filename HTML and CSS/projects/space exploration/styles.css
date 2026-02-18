@@ -19,3 +19,7 @@ body {
     border: none;
     font-family: inherit;
 }
+
+.underline{
+    border-bottom: 6px solid white;
+}
