@@ -1,0 +1,33 @@
+/*
+Flexbox Alignment:
+
+1. Main Axis (Default: Horizontal/Row)
+   - Controls horizontal alignment of items.
+   - Property: justify-content
+   - Values: flex-start, flex-end, center, space-between, space-around, space-evenly.
+
+2. Cross Axis (Default: Vertical/Column)
+   - Controls vertical alignment of items.
+   - Property: align-items
+   - Default Value: stretch (items stretch to fill the container height if no height is set on them).
+   - Other Values: flex-start (top), flex-end (bottom), center, baseline.
+
+Note: If you don't set align-items, the default is 'stretch'.
+*/
+
+.container {
+    border: 8px solid #016a26;
+    height: 260px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item {
+    width: 50px;
+    margin: 2px;
+    padding: 10px;
+    font-size: 50px;
+    border: 2px solid black;
+    background: linear-gradient(#14463d, #016a26);
+}
