@@ -1,0 +1,10 @@
+.pricing {
+    display: flex;
+    gap: 20px;
+}
+
+.pricing-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
