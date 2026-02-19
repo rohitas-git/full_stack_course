@@ -13,7 +13,8 @@ white: #ffffff
 body{
     text-align: center;
     font-family: "Happy Monkey", system-ui;
-    background-color: #a2d2ff;
+    background-color: #b6982f;
+    background: linear-gradient(to bottom, #b6982f, #d58563);
     color: #ffffff;
 }
 
@@ -22,7 +23,7 @@ body{
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #EFB0C9;
+    border: 5px solid #d58563;
 }
 
 h1, h2, h3, h4, p {
@@ -30,7 +31,7 @@ h1, h2, h3, h4, p {
 }
 
 #bdy-age {
-    background: #EFB0C9;
+    background: #d58563;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 10px 0;
@@ -38,7 +39,7 @@ h1, h2, h3, h4, p {
 
 #bdy-date {
     margin: 5px;
-    background: #EFB0C9;
+    background: #d58563;
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -97,4 +98,14 @@ h1, h2, h3, h4, p {
 
 #fifth-gift{
     height: 200px;
+}
+
+#footer{
+    display: block;
+    margin: 20px auto;
+    font-style: italic;
+}
+
+a{
+    color: #ffffff
 }
