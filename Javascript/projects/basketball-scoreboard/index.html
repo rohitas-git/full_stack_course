@@ -7,38 +7,42 @@
 </head>
 
 <body>
-    <div class="scoreboard-container">
-        <div class="teams-row">
-            <div class="team-container" id="home-team">
-                <div class="title-container">
-                    <h3 id="home-title">HOME</h3>
+    <div class="scoreboard">
+        <div class="scoreboard__teams">
+            <!-- Home Team -->
+            <div class="team team--home" id="home-team">
+                <div class="team__header">
+                    <h3 class="team__title" id="home-title">HOME</h3>
                 </div>
-                <div class="score-container">
-                    <h2 id="home-score">0</h2>
+                <div class="team__score-container">
+                    <h2 class="team__score" id="home-score">0</h2>
                 </div>
-                <div class="btn-row">
-                    <button class="btn increment-btn" id="home-plus-1-btn" onclick="incrementHomeBy1()">+1</button>
-                    <button class="btn increment-btn" id="home-plus-2-btn" onclick="incrementHomeBy2()">+2</button>
-                    <button class="btn increment-btn" id="home-plus-3-btn" onclick="incrementHomeBy3()">+3</button>
+                <div class="team__controls">
+                    <button class="btn btn--increment" id="home-plus-1-btn" onclick="incrementHomeBy1()">+1</button>
+                    <button class="btn btn--increment" id="home-plus-2-btn" onclick="incrementHomeBy2()">+2</button>
+                    <button class="btn btn--increment" id="home-plus-3-btn" onclick="incrementHomeBy3()">+3</button>
                 </div>
             </div>
-            <div class="team-container" id="guest-team">
-                <div class="title-container">
-                    <h3 id="guest-title">GUEST</h3>
+
+            <!-- Guest Team -->
+            <div class="team team--guest" id="guest-team">
+                <div class="team__header">
+                    <h3 class="team__title" id="guest-title">GUEST</h3>
                 </div>
-                <div class="score-container">
-                    <h2 id="guest-score">0</h2>
+                <div class="team__score-container">
+                    <h2 class="team__score" id="guest-score">0</h2>
                 </div>
-                <div class="btn-row">
-                    <button class="btn increment-btn" id="guest-plus-1-btn" onclick="incrementGuestBy1()">+1</button>
-                    <button class="btn increment-btn" id="guest-plus-2-btn" onclick="incrementGuestBy2()">+2</button>
-                    <button class="btn increment-btn" id="guest-plus-3-btn" onclick="incrementGuestBy3()">+3</button>
+                <div class="team__controls">
+                    <button class="btn btn--increment" id="guest-plus-1-btn" onclick="incrementGuestBy1()">+1</button>
+                    <button class="btn btn--increment" id="guest-plus-2-btn" onclick="incrementGuestBy2()">+2</button>
+                    <button class="btn btn--increment" id="guest-plus-3-btn" onclick="incrementGuestBy3()">+3</button>
                 </div>
             </div>
         </div>
-        <div class="new-game-container">
-            <button class="btn" id="end-game-btn" onclick="endGame()">End Game</button>
-            <button class="btn" id="new-game-btn" onclick="newGame()">New Game</button>
+
+        <div class="scoreboard__actions">
+            <button class="btn btn--end-game" id="end-game-btn" onclick="endGame()">End Game</button>
+            <button class="btn btn--new-game" id="new-game-btn" onclick="newGame()">New Game</button>
         </div>
     </div>
     <script src="index.js"></script>

@@ -10,7 +10,7 @@ let guestScoreEl = document.getElementById("guest-score");
 let homeTitleEl = document.getElementById("home-title");
 let guestTitleEl = document.getElementById("guest-title");
 
-let incrementBtns = document.querySelectorAll(".increment-btn");
+let incrementBtns = document.querySelectorAll(".btn--increment");
 
 function incrementHomeBy3() {
     homeScore += 3;
