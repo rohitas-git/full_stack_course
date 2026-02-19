@@ -1,0 +1,37 @@
+body { 
+    margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card{
+    display: flex;
+    gap: 20px;
+    width: 500px;
+    justify-content: space-around;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #cad2c5;
+    color: #2b2839;
+    border-bottom: 8px solid #84a98c;
+    
+    /* Increased height and alignment */
+    height: 250px;
+    align-items: center;
+
+    /* Smooth transition for hover effects */
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.profile-pic{
+    width: 200px;
+}
+
+.blue-border{
+    border: 2px dotted blue;
+}

@@ -1,0 +1,33 @@
+/*
+Span vs Div:
+
+1. <span> is an inline element.
+   - It does not start on a new line.
+   - It only takes up as much width as necessary.
+   - Used for small chunks of text or styling within a block.
+
+2. <div> is a block-level element.
+   - It starts on a new line and takes up the full width available.
+   - Used for grouping larger sections of content.
+
+Usage of span:
+- To target a specific piece of text for styling (like color, font-weight) without breaking the flow of the paragraph.
+*/
+
+body {
+    background: whitesmoke;
+    color: whitesmoke;
+    font-family: 'Rammetto One', cursive;
+}
+
+.ad {
+    background: #35654d;
+    border: 5px solid #A3BC71;
+    text-align: center;
+}
+
+.cta {
+    border: 2px solid #A3BC71;
+    padding: 5px 10px;
+    background: #8F4737;
+}

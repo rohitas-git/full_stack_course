@@ -1,0 +1,57 @@
+/*
+Flexbox Alignment:
+
+1. Main Axis (Default: Horizontal/Row)
+   - Controls horizontal alignment of items.
+   - Property: justify-content
+   - Values: flex-start, flex-end, center, space-between, space-around, space-evenly.
+
+2. Cross Axis (Default: Vertical/Column)
+   - Controls vertical alignment of items.
+   - Property: align-items
+   - Default Value: stretch (items stretch to fill the container height if no height is set on them).
+   - Other Values: flex-start (top), flex-end (bottom), center, baseline.
+
+Note: If you don't set align-items, the default is 'stretch'.
+
+Flex Direction:
+- flex-direction: row (default) -> Main Axis is Horizontal, Cross Axis is Vertical.
+- flex-direction: column -> Main Axis is Vertical, Cross Axis is Horizontal.
+  (In column mode, justify-content controls vertical alignment, and align-items controls horizontal alignment).
+*/
+
+.container {
+    width: 400px;
+    height: 400px;
+    border: 8px solid #016a26;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.container2 {
+    width: 400px;
+    height: 400px;
+    border: 8px solid #016a26;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.item {
+    width: 50px;
+    margin: 2px;
+    padding: 10px;
+    font-size: 50px;
+    border: 2px solid black;
+    background: linear-gradient(#14463d, #016a26);
+}
+
+body{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}

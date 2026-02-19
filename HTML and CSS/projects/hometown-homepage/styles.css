@@ -1,0 +1,268 @@
+
+:root {
+    /* Palette: Golden Harvest */
+    --border-color: #D84315;      /* Tandoori Red */
+    --food-bg: #FFF8E1;           /* Maize/Wheat Cream */
+    --food-title-bg: #b19f65;     /* Orange */
+    --activity-bg: #E1F5FE;       /* Open Sky Blue */
+    --activity-title-bg: #4b8aa7; /* River Blue */
+    --text-light: #FFFFFF;        /* White text */
+    --hero-title-bg: #59855c;     /* Sarson Green */
+    --hero-subtitle-bg: #6f9852;  /* Leaf Green */
+    --guide-bg: #5fb7ed;          /* Sky Blue */
+    --guide-title-bg: #5fb7ed;    /* Sky Blue */
+    --guide-text-color: #2a2d1a;  /* Dark Green */
+    --card-bg: #2e5a82;
+    --text-color: #070606c3;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+
+img {
+    width: 100px;
+}
+
+h2,h3,p{
+    color: var(--text-color);
+}
+
+/* --- Shared Utility Classes --- */
+
+/* For Flexbox Containers (Sections) */
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-family: "Inter", sans-serif;
+    margin: 0px; 
+}
+
+/* For Flexbox Rows (Item Groups) */
+.flex-row-center {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+/* Common Header Styles */
+.section-header {
+    margin: 10px;
+    padding: 10px;
+    color: var(--text-light); 
+}
+
+.section{
+    margin: 20px;
+    padding: 10px;
+    font-family: "Playfair Display", serif;
+}
+
+.activity{
+    width: 300px;
+    height: 300px;
+}
+    
+/* Common Image Styles */
+.circle-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--border-color);
+}
+
+/* .food-img now handled by HTML classes or specific overrides if needed. 
+   Removing empty rule to fix lint 1282eae3-974b-40c6-a3cf-aab3377abf8e */
+/* .food-img empty rule removed */
+
+.img {
+    /* Extending .circle-img, but removing duplicate props if HTML is updated, 
+        otherwise keeping this block to map to .circle-img styles effectively 
+        but here we are just cleaning up the CSS definition */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#guide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--food-bg), var(--activity-bg));
+    margin: 0px auto;
+    font-family: "Inter", sans-serif;
+}
+
+#card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Reduced gap for card tightness */
+    
+    background-color: var(--text-light); /* White background for card */
+    color: var(--text-color);      /* Dark text for contrast */
+    
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px; /* Smoother corners */
+    
+    /* Card shadow and dimensions */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08); /* Subtle depth */
+    max-width: 600px; /* Constrain width */
+    width: 100%;
+}
+
+#guide-info {
+    /* Flex container for text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Left align text in card */
+    text-align: left;
+    
+    color: var(--guide-text-color);
+}
+
+#guide-name {
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#guide-title {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 0;
+    background: none; 
+    color: var(--guide-text-color);
+    letter-spacing: 1px;
+}
+
+
+#guide-img {
+    border: 3px solid var(--food-title-bg);
+    width: 120px;  /* Smaller profile pic size */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular */
+    margin: 0; /* Remove margin as flex gap handles spacing */
+    flex-shrink: 0; /* Prevent squishing */
+}
+
+#img{
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(to bottom, var(--food-bg), var(--food-bg));
+}
+
+#foods{
+    display: flex;
+    flex-direction: flex-row;
+    gap: 100px;
+}   
+
+#food-section{
+    /* Uses .flex-column-center properties via mixin/utility approach */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-family: "Inter", sans-serif; /* kept for specificity */
+    margin: 0px;    
+    
+    background-color: var(--food-bg);
+}
+
+#food-title{
+    /* Uses .section-header props */
+    margin: 10px;
+    padding: 10px;
+    color: var(--text-light);
+    
+    background-color: var(--food-title-bg);
+    text-shadow: 0px 0px 1px var(--food-title-bg);
+}
+
+
+#activity-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 0px;    
+    font-family: "Inter", sans-serif;
+
+    background: linear-gradient(to bottom, var(--activity-bg), var(--food-bg));
+}
+
+#activity-title{
+    margin: 10px;
+    padding: 10px;
+    color: var(--text-light);
+
+    background-color: var(--activity-title-bg);
+    text-shadow: 0px 0px 1px var(--activity-title-bg);
+}
+
+#activities{
+    display: flex;
+    flex-direction: flex-row;
+    gap: 100px;
+}
+
+.activities-img{
+    /* Usage of shared class in HTML recommended, or mixin here */
+    border: 5px solid var(--border-color);
+}
+
+#hero {
+    background-image: url("images/punjab-2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    color: var(--text-light);
+    margin: 0px;
+    text-shadow: 0px 0px 1px var(--text-light);
+    
+    /* Flex alignment - similar to utility but specific justifyContent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+#hero-title {
+    font-size: 48px;
+    padding: 5px 20px;
+    
+    margin: 10px 0;
+    background-color: var(--hero-title-bg);
+    text-shadow: 0px 0px 1px var(--hero-title-bg);
+}
+
+#hero-subtitle {
+    font-size: 24px;
+    padding: 5px 20px;
+    margin: 10px 0;
+    background-color: var(--hero-subtitle-bg);
+    text-shadow: 0px 0px 1px var(--hero-subtitle-bg);
+}
+
+.softer-header{
+    border-radius: 10px;
+}

@@ -1,0 +1,56 @@
+/*
+Padding vs Margin vs Border:
+
+- Margin: Space OUTSIDE the element. It pushes other elements away from this element.
+    Think of it as the personal space around the element.
+
+- Border: The line or edge AROUND the element. It sits between the margin and the padding.
+    Think of it as the fence around your property.
+
+- Padding: Space INSIDE the element. It pushes the content away from the element's border.
+    Think of it as the internal cushion between the border and the content.
+*/
+
+/*
+The CSS Box Model:
+
+Every element in CSS is a rectangular box. The box model describes how the size of that box is calculated.
+It consists of four layers (from inside out):
+
+1. **Content**: The actual content of the element (text, image, etc.). Its size is determined by `width` and `height`.
+2. **Padding**: Clears an area around the content. The padding is transparent.
+3. **Border**: A border that goes around the padding and content.
+4. **Margin**: Clears an area outside the border. The margin is transparent.
+
+Total Element Width = width + left padding + right padding + left border + right border + left margin + right margin
+Total Element Height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+
+Example Calculation for .card below:
+- Width (Content): 300px
+- Padding (L+R): 20px + 20px = 40px
+- Border (L+R): 5px + 5px = 10px
+- Margin (L+R): auto (variable)
+
+Total Visual Width (how much space it takes up horizontally excluding margin): 300 + 40 + 10 = 350px
+*/
+
+.card {
+    color: #222222;
+    background-color: rgb(194, 194, 194);
+    width: 300px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border: 5px solid #222222;
+    border-radius: 15px;
+
+    /* 
+    Padding adds space inside the card, 
+    preventing the text from touching the edges of the background.
+    */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
