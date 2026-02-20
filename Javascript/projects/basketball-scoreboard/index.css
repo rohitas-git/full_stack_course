@@ -8,10 +8,13 @@
     --color-btn-border: #9AABD8;
     --color-border: #2C3558; /* Subtle border */
     
+
+    /* Spacing scale for consistent layout margins and padding */
     --space-xs: 5px;
     --space-sm: 10px;
     --space-md: 20px;
     --space-lg: 40px;
+    
     
     --font-primary: 'Verdana', sans-serif;
     --font-display: 'Cursed Timer ULiL', sans-serif;
