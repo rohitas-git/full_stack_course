@@ -114,7 +114,8 @@ function Counter({ label, initialValue }) {
   // Space Complexity: O(n)
   const fibValueRecursive = useMemo(() => {
     const n = parseInt(fibonacciNumber) || 0;
-    
+  
+
     // Memoization cache
     const memo = {};
     function fib(num) {

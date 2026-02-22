@@ -15,9 +15,16 @@
         Generate a <br /><span class="text-highlight">random password</span>
       </h1>
       <p class="card-subtitle">Never use an insecure password again.</p>
-      <button id="generate-password-btn" onclick="generateRandomPassword()">
-        Generate passwords
-      </button>
+      <div id="btn-rows">
+        <button id="generate-password-btn" onclick="generateRandomPassword()">
+          Generate passwords
+        </button>
+        <label class="toggle">
+            <span> Symbol </span>
+            <input type="checkbox" id="symbols-toggle">
+            <span class="toggle-slider">::before</span>
+        </label> 
+      </div>
       <div class="password-container">
         <div class="password-display">
           <p class="password-text" id="password-text-1">Password</p>
