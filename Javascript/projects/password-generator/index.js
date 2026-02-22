@@ -92,15 +92,25 @@ const characters = [
   "/",
 ];
 
+const letters = characters.slice(0, 52);   // A-Z, a-z
+const numbers = characters.slice(52, 62);  // 0-9
+const symbols = characters.slice(62);      // ~`!@#$%^&*()_-+=[]{}...
+
 let passwordLength = 10;
-let passedArray = characters;
 let passwordOneEl = document.getElementById("password-text-1");
 let passwordTwoEl = document.getElementById("password-text-2");
-let symbolToggle = false;
-let numbersToggle = false;
-let 
+let symbolsToggleEl = document.getElementById("symbols-toggle");
+let numbersToggleEl = document.getElementById("numbers-toggle");
+
+function getCharacterSet() {
+  let set = [...letters];
+  if (numbersToggleEl.checked) set = set.concat(numbers);
+  if (symbolsToggleEl.checked) set = set.concat(symbols);
+  return set.length ? set : letters; // fallback if both toggles off
+}
 
 function generateRandomPassword() {
+  const passedArray = getCharacterSet();
   let password1 = "";
   let password2 = "";
   for (let i = 0; i < passwordLength; i++) {
