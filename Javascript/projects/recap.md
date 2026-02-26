@@ -22,3 +22,16 @@
 8. for loop
 9. Math object
 10. return statement
+
+## Recap 3
+
+1. const
+2. addEventListener()
+3. innerHTML
+4. input.value
+5. function parameters
+6. template strings
+7. localStorage
+8. The JSON object
+9. objects in array
+10. 
