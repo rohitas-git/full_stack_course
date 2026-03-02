@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semantic HTML Example</title>
+</head>
+<body>
+
+    <!-- Primary navigation and branding -->
+    <header>
+        <h1>CodeLearner Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- The "meat" of the page -->
+    <main>
+        <section id="articles">
+            <h2>Recent Tutorials</h2>
+            
+            <article>
+                <h3>Understanding Semantic HTML</h3>
+                <p>Published on: <time datetime="2023-10-27">October 27, 2023</time></p>
+                <p>Semantic HTML is the foundation of a modern web...</p>
+                
+                <figure>
+                    <img src="code-sample.jpg" alt="Screenshot of HTML5 tags">
+                    <figcaption>Fig 1. A clean example of semantic markup.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <!-- Sidebar for extra info -->
+        <aside>
+            <h4>Related Resources</h4>
+            <p>Check out the MDN Web Docs for more information.</p>
+        </aside>
+
+        <!-- Interactive form section -->
+        <section id="contact">
+            <h2>Newsletter Signup</h2>
+            <form>
+                <fieldset>
+                    <legend>Choose your frequency:</legend>
+                    
+                    <input type="radio" id="daily" name="freq" value="daily">
+                    <label for="daily">Daily Digest</label><br>
+                    
+                    <input type="radio" id="weekly" name="freq" value="weekly">
+                    <label for="weekly">Weekly Roundup</label>
+                </fieldset>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer for legal/meta info -->
+    <footer>
+        <p>&copy; 2023 CodeLearner Inc. Built with Semantic HTML.</p>
+    </footer>
+
+</body>
+</html>

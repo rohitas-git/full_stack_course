@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessibility Guidelines Example</title>
+    <link rel="stylesheet" href="example.css" />
+  </head>
+  <body>
+    <!-- ===== SKIP LINK: Keyboard Navigation ===== -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content">
+      <!-- ===== WCAG 2.0 / POUR PRINCIPLES ===== -->
+      <h1>Accessibility Best Practices Demo</h1>
+      <p>
+        This page demonstrates the four POUR principles from
+        <strong>WCAG 2.0</strong>:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Perceivable</strong>: Information is available through
+          multiple senses
+        </li>
+        <li>
+          <strong>Operable</strong>: Users can interact via keyboard and mouse
+        </li>
+        <li>
+          <strong>Understandable</strong>: Content is clear and predictable
+        </li>
+        <li><strong>Robust</strong>: Works with assistive technologies</li>
+      </ul>
+
+      <!-- ===== SECTION 1: HEADINGS ===== -->
+      <section>
+        <h2>1. Proper Heading Hierarchy</h2>
+        <p>
+          Headings use proper levels (h1 → h2 → h3) to create document
+          structure. Only one h1 per page. Screen readers rely on this hierarchy
+          for navigation.
+        </p>
+
+        <h3>1.1 Why Heading Order Matters</h3>
+        <p>
+          Users with screen readers can jump between headings. Skipping levels
+          confuses navigation. Use headings for structure, not style.
+        </p>
+
+        <h3>1.2 Font Size Using rem Units</h3>
+        <p>
+          All font sizes use <code>rem</code> units (1rem = 16px by default).
+          This respects user browser font-size settings, improving accessibility
+          for users who enlarge text. The
+          <code>html { font-size: 62.5%; }</code> trick makes math easy: 1.6rem
+          = 16px, 2.4rem = 24px.
+        </p>
+      </section>
+
+      <!-- ===== SECTION 2: SEMANTIC LISTS ===== -->
+      <section>
+        <h2>2. Semantic Lists</h2>
+        <p>
+          Use <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, and
+          <code>&lt;li&gt;</code> for any collection of items:
+        </p>
+
+        <h3>2.1 Unordered List Example</h3>
+        <ul>
+          <li>Feature A</li>
+          <li>Feature B</li>
+          <li>Feature C</li>
+        </ul>
+
+        <h3>2.2 Ordered List Example</h3>
+        <ol>
+          <li>First step in the process</li>
+          <li>Second step in the process</li>
+          <li>Third step in the process</li>
+        </ol>
+
+        <div class="note">
+          ✓ <strong>Good</strong>: Consecutive items wrapped in
+          <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>. <br />
+          ✗ <strong>Bad</strong>: Repeating <code>&lt;div&gt;</code> elements
+          treated as a list.
+        </div>
+      </section>
+
+      <!-- ===== SECTION 3: ALTERNATIVE TEXT ===== -->
+      <section>
+        <h2>3. Alternative Text for Images</h2>
+        <p>
+          Non-decorative images must have <code>alt</code> attributes describing
+          their content. Decorative images use empty <code>alt=""</code>.
+        </p>
+
+        <h3>3.1 Image with Alt Text (Non-decorative)</h3>
+        <img
+          src="https://via.placeholder.com/300x200?text=Example+Image"
+          alt="A placeholder image demonstrating proper alt text usage"
+        />
+
+        <div class="note">
+          <strong>Who benefits:</strong> People with visual impairments, users
+          with images disabled, search engines.
+        </div>
+      </section>
+
+      <!-- ===== SECTION 4: LINKS ===== -->
+      <section>
+        <h2>4. Semantic Links with Descriptive Text</h2>
+        <p>
+          Links should use the <code>&lt;a&gt;</code> element with meaningful
+          text:
+        </p>
+
+        <h3>4.1 Good Link Examples</h3>
+        <ul>
+          <li>
+            <a href="https://www.w3.org/WAI/WCAG21/quickref/">
+              Read the WCAG 2.1 Quick Reference</a
+            >
+          </li>
+          <li>
+            <a href="#color-contrast-section">Learn about color contrast</a>
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility"
+            >
+              Explore MDN's Accessibility Guide</a
+            >
+          </li>
+        </ul>
+
+        <h3>4.2 Poor Link Examples (Avoid These)</h3>
+        <p style="color: #666">
+          ✗ "Click here" or "Read more" or "Learn about it" — these lack
+          context.
+          <br />
+          ✓ Instead, use: "Learn about color contrast" or "View the pricing
+          page".
+        </p>
+      </section>
+
+      <!-- ===== SECTION 5: COLOR CONTRAST ===== -->
+      <section id="color-contrast-section">
+        <h2>5. Color Contrast (WCAG AA Level)</h2>
+
+        <h3>5.1 Contrast Ratios</h3>
+        <ul>
+          <li>
+            <strong>Natural text:</strong> This dark text (#333) on white has a
+            contrast ratio of 12.6:1 (exceeds AAA, even AAA standards).
+          </li>
+          <li>
+            <strong>Links:</strong> Link text (#0066cc) has 8.6:1 contrast,
+            meeting AA standards (4.5:1 required).
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>WCAG Standards:</strong>
+          <ul style="margin: 0.5rem 0">
+            <li>AA: 4.5:1 for normal text, 3:1 for large text (≥24px)</li>
+            <li>AAA: 7:1 for normal text, 4.5:1 for large text</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 6: FORM LABELS ===== -->
+      <section>
+        <h2>6. Form Fields with Proper Labels</h2>
+        <p>
+          Every input must have an associated
+          <code>&lt;label&gt;</code> element.
+          <strong>Placeholder text alone is not sufficient</strong> for
+          accessibility.
+        </p>
+
+        <form>
+          <div class="form-group">
+            <label for="full-name">Full Name:</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+              <option value="">-- Select a country --</option>
+              <option value="us">United States</option>
+              <option value="uk">United Kingdom</option>
+              <option value="ca">Canada</option>
+              <option value="au">Australia</option>
+            </select>
+          </div>
+
+          <fieldset>
+            <legend>Do you agree to the terms?</legend>
+            <div class="radio-group">
+              <input type="radio" id="agree-yes" name="agree" value="yes" />
+              <label for="agree-yes">Yes, I agree</label>
+            </div>
+            <div class="radio-group">
+              <input type="radio" id="agree-no" name="agree" value="no" />
+              <label for="agree-no">No, I do not agree</label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Enter your message here"
+              rows="5"
+            ></textarea>
+          </div>
+
+          <button type="submit" onclick="handleSubmit(event)">
+            Submit Form
+          </button>
+        </form>
+
+        <div class="note">
+          <strong>Key Points:</strong>
+          <ul style="margin: 0.5rem 0">
+            <li>
+              <code>label for="id"</code> paired with <code>input id="id"</code>
+            </li>
+            <li>
+              Use <code>&lt;fieldset&gt;</code> and
+              <code>&lt;legend&gt;</code> for radio groups
+            </li>
+            <li>Inputs use <code>name</code> attribute for form submission</li>
+            <li>Focus states are visible (blue outline)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 7: ARIA LIVE REGIONS ===== -->
+      <section>
+        <h2>7. ARIA Live Regions for Dynamic Content</h2>
+        <p>
+          Live regions announce content changes to screen readers without moving
+          focus. This example uses <code>aria-live="polite"</code> for status
+          messages.
+        </p>
+
+        <div
+          id="status-message"
+          aria-live="polite"
+          aria-atomic="true"
+          role="status"
+        >
+          Ready for input
+        </div>
+
+        <button type="button" onclick="showSuccess()">
+          Show Success Message
+        </button>
+        <button type="button" onclick="showError()">Show Error Message</button>
+
+        <div class="note">
+          <strong>ARIA Live Properties:</strong>
+          <ul style="margin: 0.5rem 0">
+            <li><code>aria-live="polite"</code>: Announce when convenient</li>
+            <li>
+              <code>aria-live="assertive"</code>: Announce immediately (urgent)
+            </li>
+            <li>
+              <code>aria-atomic="true"</code>: Read entire region, not just
+              changes
+            </li>
+            <li>
+              <code>role="status"</code>: Semantic role for status updates
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 8: CUSTOM WIDGET WITH ARIA ===== -->
+      <section>
+        <h2>8. Custom Interactive Widget with ARIA</h2>
+        <p>
+          When native HTML lacks a component, use ARIA to make custom widgets
+          accessible. This toggle switch uses <code>role="switch"</code> and
+          <code>aria-checked</code>.
+        </p>
+
+        <h3>8.1 Custom Toggle Switch</h3>
+        <div
+          id="dark-mode-toggle"
+          role="switch"
+          aria-checked="false"
+          aria-label="Toggle Dark Mode"
+          tabindex="0"
+          class="toggle-switch"
+          onclick="toggleDarkMode()"
+          onkeydown="handleToggleKeydown(event)"
+        >
+          <span class="toggle-knob"></span>
+        </div>
+        <p>Click the toggle or press Enter/Space to activate.</p>
+
+        <div class="note">
+          <strong>Accessibility Features:</strong>
+          <ul style="margin: 0.5rem 0">
+            <li><code>role="switch"</code>: Identifies as a toggle control</li>
+            <li>
+              <code>aria-checked</code>: Indicates current state (true/false)
+            </li>
+            <li><code>aria-label</code>: Provides accessible name</li>
+            <li><code>tabindex="0"</code>: Makes it keyboard-focusable</li>
+            <li>Keyboard support: Enter/Space keys trigger the action</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 9: SKIP LINKS ===== -->
+      <section>
+        <h2>9. Skip Links for Keyboard Navigation</h2>
+        <p>
+          A "Skip to main content" link appears when keyboard focus is on it
+          (top-left). This helps keyboard users bypass repetitive navigation.
+          Focus on this page with the Tab key to see it.
+        </p>
+      </section>
+
+      <!-- ===== FOOTER ===== -->
+      <footer
+        style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd"
+      >
+        <h2>Summary</h2>
+        <p>
+          For more details, see <a href="./guidelines.md">guidelines.md</a>.
+        </p>
+        <p style="font-size: 1.4rem; color: #666">
+          Last updated: 2026 | Follow WCAG 2.0 AA or AAA standards.
+        </p>
+      </footer>
+    </main>
+
+    <!-- ===== JAVASCRIPT FOR INTERACTIVITY ===== -->
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        const nameInput = document.getElementById("full-name");
+        const emailInput = document.getElementById("email");
+        const statusMsg = document.getElementById("status-message");
+
+        if (nameInput.value && emailInput.value) {
+          statusMsg.textContent = `✓ Form submitted successfully! Welcome, ${nameInput.value}.`;
+          statusMsg.className = "success";
+        } else {
+          statusMsg.textContent = "✗ Please fill in all required fields.";
+          statusMsg.className = "error";
+        }
+      }
+
+      function showSuccess() {
+        const statusMsg = document.getElementById("status-message");
+        statusMsg.textContent = "✓ Operation completed successfully!";
+        statusMsg.className = "success";
+      }
+
+      function showError() {
+        const statusMsg = document.getElementById("status-message");
+        statusMsg.textContent = "✗ An error occurred. Please try again.";
+        statusMsg.className = "error";
+      }
+
+      function toggleDarkMode() {
+        const toggle = document.getElementById("dark-mode-toggle");
+        const isChecked = toggle.getAttribute("aria-checked") === "true";
+        const newState = !isChecked;
+
+        toggle.setAttribute("aria-checked", newState);
+        toggle.classList.toggle("active", newState);
+
+        if (newState) {
+          document.body.style.background = "#1e1e1e";
+          document.body.style.color = "#ddd";
+        } else {
+          document.body.style.background = "#fff";
+          document.body.style.color = "#333";
+        }
+      }
+
+      function handleToggleKeydown(event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleDarkMode();
+        }
+      }
+    </script>
+  </body>
+</html>
